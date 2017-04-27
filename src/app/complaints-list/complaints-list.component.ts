@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IComplaint } from 'app/complaint';
 
 @Component({
   selector: 'app-complaints-list',
@@ -6,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./complaints-list.component.css']
 })
 export class ComplaintsListComponent implements OnInit {
-  complaints:any[]=[
+  showForm:boolean=false;
+  filterString: string='';
+  complaints:IComplaint[]=[
  {
-     "id": "1",
+     "id": 1,
    "region": "Northwest",
    "territory": 284,
    "grower": "Smith, Steve - Othello, WA",
@@ -19,7 +22,7 @@ export class ComplaintsListComponent implements OnInit {
    
  },
  {
-     "id": "2",
+     "id": 2,
    "region": "East Central",
    "territory": 223,
    "grower": "Fay, Preston - Mebane, NC",
@@ -30,7 +33,7 @@ export class ComplaintsListComponent implements OnInit {
    
  },
  {
-     "id": "3",
+     "id": 3,
    "region": "East",
    "territory": 18,
    "grower": "Marc, Mathis - Lorimor, IA",
@@ -41,7 +44,7 @@ export class ComplaintsListComponent implements OnInit {
    
  },
  {
-     "id": "4",
+     "id": 4,
    "region": "West",
    "territory": 96,
    "grower": "Miner, Owen - Orland, CA",
@@ -52,7 +55,7 @@ export class ComplaintsListComponent implements OnInit {
    
  },
  {
-     "id": "5",
+     "id": 5,
    "region": "West",
    "territory": 89,
    "grower": "Tim Chelok - Colusa, CA",
@@ -63,7 +66,7 @@ export class ComplaintsListComponent implements OnInit {
    
  },
  {
-     "id": "6",
+     "id": 6,
    "region": "East",
    "territory": 29,
    "grower": "Thompson, Ken - Creston, IA",
@@ -74,7 +77,7 @@ export class ComplaintsListComponent implements OnInit {
    
  },
  {
-     "id": "7",
+     "id": 7,
    "region": "Northwest",
    "territory": 287,
    "grower": "Termotto, Jim - Connell, WA",
@@ -85,7 +88,7 @@ export class ComplaintsListComponent implements OnInit {
    
  },
  {
-     "id": "8",
+     "id": 8,
    "region": "Northwest",
    "territory": 287,
    "grower": "Cooper, Jeremy - Sunnyside, WA",
@@ -96,7 +99,7 @@ export class ComplaintsListComponent implements OnInit {
    
  },
  {
-     "id": "9",
+     "id": 9,
    "region": "East",
    "territory": 29,
    "grower": "Toft, Jimmy - Lenox, IA",
@@ -107,7 +110,7 @@ export class ComplaintsListComponent implements OnInit {
    
  },
  {
-     "id": "10",
+     "id": 10,
    "region": "East",
    "territory": 29,
    "grower": "Toft, Andy - Lenox, IA",
@@ -122,5 +125,8 @@ export class ComplaintsListComponent implements OnInit {
 
   ngOnInit() {
   }
-
+toggleShowForm():void{
+  this.showForm=!this.showForm;
+  console.log("showForm:"+this.showForm);
+}
 }

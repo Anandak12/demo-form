@@ -9,11 +9,13 @@ import { AppComponent } from './app.component';
 
 import { AlertModule } from 'ng2-bootstrap/ng2-bootstrap';
 import { ComplaintsListComponent } from './complaints-list/complaints-list.component';
+import { ByTerritoryPipe } from './by-territory.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ComplaintsListComponent
+    ComplaintsListComponent,
+    ByTerritoryPipe
   ],
   imports: [
     BrowserModule,
