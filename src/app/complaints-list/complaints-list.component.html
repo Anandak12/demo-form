@@ -1,0 +1,98 @@
+<div class='tab-content col-sm-9'>
+          <div class='row'>
+            <div class='col-xs-12'>
+              <button class='btn btn-info pull-right' data-target='#newComplaint' data-toggle='collapse' style='margin-bottom: 12px'>
+                <div class='fa fa-plus'></div>
+                New Complaint
+              </button>
+            </div>
+          </div>
+          <div class='row add-new-contact collapse' id='newComplaint'>
+            <h3 class="col-md-12">New Complaint</h3>
+            
+            <div class='col-xs-12'>
+              <form class='form-horizontal' role='form'>
+                <div class='form-group'>
+                  <label class='col-sm-2 control-label' for='inputEmail3'>Grower Name</label>
+                  <div class='col-sm-5'>
+                    <input class='form-control' id='first_name' placeholder='First' type='text'>
+                  </div>
+                  <div class='col-sm-5'>
+                    <input class='form-control' id='last_name' placeholder='Last' type='text'>
+                  </div>
+                </div>
+                <div class='form-group'>
+                  <label class='col-sm-2 control-label' for='inputEmail3'>Region</label>
+                  <div class='col-sm-3'>
+                    <select class='form-control' id='first_name' placeholder='Region' style='margin-top: 10px; margin-left: -2px' type='text'>
+                      <option value=''>Choose Territory</option>
+                      <option value=''>Northwest</option>
+                      <option value=''>East</option>
+                      <option value=''>East Central</option>
+                      <option value=''>West</option>
+                    </select>
+                  </div>
+                  <label class='col-sm-2 control-label' for='inputEmail3'>Territory</label>
+                  <div class='col-sm-5'>
+                    <input class='form-control' id='last_name' placeholder='Territory' type='text'>
+                  </div>
+                </div>
+                <div class='form-group'>
+                  <label class='col-sm-2 control-label' for='inputPassword3'>Retailer</label>
+                  <div class='col-sm-10'>
+                    <input class='form-control' id='street_address' placeholder='Retailer Name' type='text'>
+                  </div>
+                </div>
+                <br>
+                <div class='form-group'>
+                  <label class='col-sm-2 control-label' for='inputPassword3'>Complaint</label>
+                  <div class='col-sm-10'>
+                    <textarea class='form-control' name='' rows='5'></textarea>
+                  </div>
+                </div>
+                <div class='form-group'>
+                  <label class='col-sm-2 control-label'></label>
+                  <div class='col-xs-10'>
+                    <button class='btn btn-success' >Submit Complaint</button>
+                    <button class='btn btn-danger' data-target='#newComplaint' data-toggle='collapse'>
+              Cancel
+            </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class='tab-pane fade active in' id='tab1'>
+            <div class='row search-anything'>
+              <div class='col-xs-10'>
+                <input class='form-control input-xl' placeholder='Search by name, address, ID, etc...' type='text'>
+              </div>
+              <div class='col-xs-2'>
+                <a class='btn btn-success pull-right btn-block' href='search.html' style='margin: 10px 0'>Search</a>
+              </div>
+            </div>
+            <br>
+            <table class='table table-hover' *ngIf="complaints && complaints.length">
+              <thead>
+                <tr>
+                  <th>Region</th>
+                  <th>Territory</th>
+                  <th>Grower</th>
+                  <th>Retailer</th>
+                  <th>Date Filed</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor='let complaint of complaints'>
+                  <td>{{complaint.region}}</td>
+                  <td>{{complaint.territory}}</td>
+                  <td>{{complaint.grower}}</td>
+                  <td>{{complaint.retailer}}</td>
+                  <td>{{complaint.dateField}}</td>
+                  <td>{{complaint.status}}</td>
+                </tr>
+              </tbody>
+            </table>
+          
+
