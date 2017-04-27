@@ -77,16 +77,16 @@
             <table class='table table-hover' *ngIf="complaints && complaints.length">
               <thead>
                 <tr>
-                  <th>Region</th>
-                  <th>Territory</th>
-                  <th>Grower</th>
-                  <th>Retailer</th>
-                  <th>Date Filed</th>
-                  <th>Status</th>
+                  <th><a (click)="changeOrder('region')">Region</a></th> 
+                  <th><a (click)="changeOrder('territory')">Territory</a></th>
+                  <th><a (click)="changeOrder('grower')">Grower</a></th>
+                  <th><a (click)="changeOrder('retailer')">Retailer</a></th>
+                  <th><a (click)="changeOrder('dateFiled')">Date Filed</a></th>
+                  <th><a (click)="changeOrder('status')">Status</a></th>
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let complaint of complaints | byTerritory:filterString">
+                <tr *ngFor="let complaint of complaints | byTerritory:filterString | orderBy: order : reverse">
                   <td>{{complaint.region }}</td>
                   <td>{{complaint.territory}}</td>
                   <td>{{complaint.grower}}</td>
