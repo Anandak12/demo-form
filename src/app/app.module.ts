@@ -11,13 +11,15 @@ import { AlertModule } from 'ng2-bootstrap/ng2-bootstrap';
 import { ComplaintsListComponent } from './complaints-list/complaints-list.component';
 import { ByTerritoryPipe } from './by-territory.pipe';
 import { Ng2OrderByPipe } from './ng2-order-by.pipe';
+import { ComplaintDetailComponent } from './complaint-detail/complaint-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ComplaintsListComponent,
     ByTerritoryPipe,
-    Ng2OrderByPipe
+    Ng2OrderByPipe,
+    ComplaintDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +30,10 @@ import { Ng2OrderByPipe } from './ng2-order-by.pipe';
       {
       path: 'complaints',
       component: ComplaintsListComponent
+     },
+     {
+       path:'complaints/:id',
+       component: ComplaintDetailComponent
      }
     ])
   ],
