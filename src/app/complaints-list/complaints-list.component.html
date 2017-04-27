@@ -87,7 +87,7 @@
               </thead>
               <tbody>
                 <tr *ngFor="let complaint of complaints | byTerritory:filterString | orderBy: order : reverse">
-                  <td>{{complaint.region }}</td>
+                  <td><a [routerLink]="['/complaint',complaint.id]">{{complaint.region }}</a></td>
                   <td>{{complaint.territory}}</td>
                   <td>{{complaint.grower}}</td>
                   <td>{{complaint.retailer}}</td>

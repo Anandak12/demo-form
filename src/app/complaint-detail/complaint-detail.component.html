@@ -1,3 +1,51 @@
-<p>
-  complaint-detail works!
-</p>
+<div class='panel panel-success container' *ngIf='complaint'>
+    <div class='panel-heading' style='font-size:large'>
+        {{pageTitle }}
+    </div>
+
+    <div class='panel-body'>
+        <div class='row'>
+            <div class='col-md-12'>
+                <div class='row center'>
+                    <div class='col-md-3'>ID:</div>
+                    <div class='col-md-9'>{{complaint.id}}</div>
+                </div>
+                <div class='row center'>
+                    <div class='col-md-3'>Region:</div>
+                    <div class='col-md-9'>{{complaint.region}}</div>
+                </div>
+                <div class='row center'>
+                    <div class='col-md-3'>Territory:</div>
+                    <div class='col-md-9'>{{complaint.territory}}</div>
+                </div>
+                <div class='row center'>
+                    <div class='col-md-3'>Grower:</div>
+                    <div class='col-md-9'>{{complaint.grower}}</div>
+                </div>
+                 <div class='row center'>
+                    <div class='col-md-3'>Retailer:</div>
+                    <div class='col-md-9'>{{complaint.retailer}}</div>
+                </div>
+                 <div class='row center'>
+                    <div class='col-md-3'>Date Filed:</div>
+                    <div class='col-md-9'>{{complaint.dateFiled}}</div>
+                </div>
+                 <div class='row center'>
+                    <div class='col-md-3'>Status:</div>
+                    <div class='col-md-9'>{{complaint.status}}</div>
+                </div>
+                <div class='row center'>
+                    <div class='col-md-3'>Description:</div>
+                    <div class='col-md-9'>{{complaint.description}}</div>
+                </div>
+               
+            </div>
+           </div> 
+    </div>
+
+    <div class='panel-footer'>
+        <a class='btn btn-default' (click)='onBack()' style='width:80px'>
+            <i class='glyphicon glyphicon-chevron-left'></i> Back
+        </a>
+    </div>
+</div>

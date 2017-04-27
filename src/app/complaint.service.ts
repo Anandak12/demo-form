@@ -19,6 +19,11 @@ constructor(private _http:Http){}
         .do(data=>console.log('All: '+JSON.stringify(data)))
         .catch(this.handleError);
     }
+    getComplaintById(id: number): Observable<IComplaint> {
+        return this.getComplaints()
+            .map((complaints: IComplaint[]) => complaints.find(p => p.id === id));
+    }
+
     private handleError(error: Response){
       console.error(error);
       return Observable.throw(error.json().error || 'Server Error');

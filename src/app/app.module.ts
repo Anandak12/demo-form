@@ -32,8 +32,12 @@ import { ComplaintDetailComponent } from './complaint-detail/complaint-detail.co
       component: ComplaintsListComponent
      },
      {
-       path:'complaints/:id',
+       path:'complaint/:id',
        component: ComplaintDetailComponent
+     },
+     {
+       path:'',
+       redirectTo:'complaints', pathMatch:'full'
      }
     ])
   ],
